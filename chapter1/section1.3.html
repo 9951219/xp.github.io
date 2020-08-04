@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>RabbitMQ · GitBook</title>
+        <title>RabbitMQ的多种Exchange类型 · GitBook</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -57,10 +57,10 @@
     <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="section1.1.html" />
+    <link rel="next" href="../chapter2/" />
     
     
-    <link rel="prev" href="../" />
+    <link rel="prev" href="section1.2.html" />
     
 
     </head>
@@ -102,7 +102,7 @@
             
         </li>
     
-        <li class="chapter active" data-level="1.2" data-path="./">
+        <li class="chapter " data-level="1.2" data-path="./">
             
                 <a href="./">
             
@@ -142,7 +142,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.2.3" data-path="section1.3.html">
+        <li class="chapter active" data-level="1.2.3" data-path="section1.3.html">
             
                 <a href="section1.3.html">
             
@@ -235,7 +235,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href=".." >RabbitMQ</a>
+        <a href=".." >RabbitMQ的多种Exchange类型</a>
     </h1>
 </div>
 
@@ -250,7 +250,26 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="rabbitmq">RabbitMQ</h1>
+                                <h1 id="rabbitmq&#x7684;&#x591A;&#x79CD;exchange&#x7C7B;&#x578B;">RabbitMQ&#x7684;&#x591A;&#x79CD;Exchange&#x7C7B;&#x578B;</h1>
+<p>Exchange&#x5206;&#x53D1;&#x6D88;&#x606F;&#x65F6;&#xFF0C;&#x6839;&#x636E;&#x7C7B;&#x578B;&#x7684;&#x4E0D;&#x540C;&#x5206;&#x53D1;&#x7B56;&#x7565;&#x6709;&#x533A;&#x522B;&#x3002;&#x76EE;&#x524D;&#x5171;&#x56DB;&#x79CD;&#x7C7B;&#x578B;&#xFF1A;direct&#x3001;fanout&#x3001;topic&#x3001;headers(headers&#x5339;&#x914D;AMQP&#x6D88;&#x606F;&#x7684;header&#x800C;&#x4E0D;&#x662F;&#x8DEF;&#x7531;&#x952E;(Routing-key)&#xFF0C;&#x6B64;&#x5916;headers&#x4EA4;&#x6362;&#x5668;&#x548C;direct&#x4EA4;&#x6362;&#x5668;&#x5B8C;&#x5168;&#x4E00;&#x81F4;&#xFF0C;&#x4F46;&#x662F;&#x6027;&#x80FD;&#x5DEE;&#x4E86;&#x5F88;&#x591A;&#xFF0C;&#x76EE;&#x524D;&#x51E0;&#x4E4E;&#x7528;&#x4E0D;&#x5230;&#x4E86;&#x3002;&#x6240;&#x4EE5;&#x76F4;&#x63A5;&#x770B;&#x53E6;&#x5916;&#x4E09;&#x79CD;&#x7C7B;&#x578B;&#x3002;)&#x3002;</p>
+<blockquote>
+<p>direct</p>
+</blockquote>
+<p><img src="https:////upload-images.jianshu.io/upload_images/5015984-13db639d2c22f2aa.png?imageMogr2/auto-orient/strip|imageView2/2/w/385/format/webp" alt="img"></p>
+<p>MacDown Screenshot</p>
+<p>&#x6D88;&#x606F;&#x4E2D;&#x7684;&#x8DEF;&#x7531;&#x952E;(routing key)&#x5982;&#x679C;&#x548C;Binding&#x4E2D;&#x7684;binding key&#x4E00;&#x81F4;&#xFF0C;&#x4EA4;&#x6362;&#x5668;&#x5C31;&#x5C06;&#x6D88;&#x606F;&#x53D1;&#x5230;&#x5BF9;&#x5E94;&#x7684;&#x961F;&#x5217;&#x4E2D;&#x3002;&#x8DEF;&#x7531;&#x952E;&#x4E0E;&#x961F;&#x5217;&#x540D;&#x5B8C;&#x5168;&#x5339;&#x914D;&#x3002;</p>
+<blockquote>
+<p>fanout</p>
+</blockquote>
+<p><img src="https:////upload-images.jianshu.io/upload_images/5015984-2f509b7f34c47170.png?imageMogr2/auto-orient/strip|imageView2/2/w/463/format/webp" alt="img"></p>
+<p>MacDown Screenshot</p>
+<p>&#x6BCF;&#x4E2A;&#x53D1;&#x5230;fanout&#x7C7B;&#x578B;&#x4EA4;&#x6362;&#x5668;&#x7684;&#x6D88;&#x606F;&#x90FD;&#x4F1A;&#x5206;&#x5230;&#x6240;&#x6709;&#x7ED1;&#x5B9A;&#x7684;&#x961F;&#x5217;&#x4E0A;&#x53BB;&#x3002;fanout&#x4EA4;&#x6362;&#x5668;&#x4E0D;&#x5904;&#x7406;&#x8BE5;&#x8DEF;&#x7531;&#x952E;&#xFF0C;&#x53EA;&#x662F;&#x7B80;&#x5355;&#x7684;&#x5C06;&#x961F;&#x5217;&#x7ED1;&#x5B9A;&#x5230;&#x4EA4;&#x6362;&#x5668;&#x4E0A;&#xFF0C;&#x6BCF;&#x4E2A;&#x53D1;&#x9001;&#x5230;&#x4EA4;&#x6362;&#x5668;&#x7684;&#x6D88;&#x606F;&#x90FD;&#x4F1A;&#x88AB;&#x8F6C;&#x53D1;&#x5230;&#x4E0E;&#x8BE5;&#x4EA4;&#x6362;&#x5668;&#x7ED1;&#x5B9A;&#x7684;&#x6240;&#x6709;&#x961F;&#x5217;&#x4E0A;&#x3002;&#x5F88;&#x50CF;&#x5B50;&#x7F51;&#x5E7F;&#x64AD;&#xFF0C;&#x6BCF;&#x53F0;&#x5B50;&#x7F51;&#x5185;&#x7684;&#x4E3B;&#x673A;&#x90FD;&#x83B7;&#x5F97;&#x4E86;&#x4E00;&#x4EFD;&#x590D;&#x5236;&#x7684;&#x6D88;&#x606F;&#x3002;fanout&#x7C7B;&#x578B;&#x8F6C;&#x53D1;&#x6D88;&#x606F;&#x662F;&#x6700;&#x5FEB;&#x7684;&#x3002;</p>
+<blockquote>
+<p>topic</p>
+</blockquote>
+<p><img src="https:////upload-images.jianshu.io/upload_images/5015984-275ea009bdf806a0.png?imageMogr2/auto-orient/strip|imageView2/2/w/558/format/webp" alt="img"></p>
+<p>MacDown Screenshot</p>
+<p>topic&#x4EA4;&#x6362;&#x5668;&#x901A;&#x8FC7;&#x6A21;&#x5F0F;&#x5339;&#x914D;&#x5206;&#x914D;&#x6D88;&#x606F;&#x7684;&#x8DEF;&#x7531;&#x952E;&#x5C5E;&#x6027;&#xFF0C;&#x5C06;&#x8DEF;&#x7531;&#x952E;&#x548C;&#x67D0;&#x4E2A;&#x6A21;&#x5F0F;&#x8FDB;&#x884C;&#x5339;&#x914D;&#xFF0C;&#x6B64;&#x65F6;&#x961F;&#x5217;&#x9700;&#x8981;&#x7ED1;&#x5B9A;&#x5230;&#x4E00;&#x4E2A;&#x6A21;&#x5F0F;&#x4E0A;&#x3002;&#x5B83;&#x5C06;&#x8DEF;&#x7531;&#x952E;(routing-key)&#x548C;&#x7ED1;&#x5B9A;&#x952E;(bingding-key)&#x7684;&#x5B57;&#x7B26;&#x4E32;&#x5207;&#x5206;&#x6210;&#x5355;&#x8BCD;&#xFF0C;&#x8FD9;&#x4E9B;&#x5355;&#x8BCD;&#x4E4B;&#x95F4;&#x7528;&#x70B9;&#x9694;&#x5F00;&#x3002;&#x5B83;&#x540C;&#x6837;&#x4E5F;&#x4F1A;&#x8BC6;&#x522B;&#x4E24;&#x4E2A;&#x901A;&#x914D;&#x7B26;&#xFF1A;&quot;#&quot;&#x548C;&quot;*&quot;&#x3002;#&#x5339;&#x914D;0&#x4E2A;&#x6216;&#x591A;&#x4E2A;&#x5355;&#x8BCD;&#xFF0C;&#x5339;&#x914D;&#x4E0D;&#x591A;&#x4E0D;&#x5C11;&#x4E00;&#x4E2A;&#x5355;&#x8BCD;&#x3002;</p>
 
                                 
                                 </section>
@@ -278,12 +297,12 @@
 
             
                 
-                <a href="../" class="navigation navigation-prev " aria-label="Previous page: 学习笔记">
+                <a href="section1.2.html" class="navigation navigation-prev " aria-label="Previous page: RabbitMQ各组件功能">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
                 
-                <a href="section1.1.html" class="navigation navigation-next " aria-label="Next page: 简介">
+                <a href="../chapter2/" class="navigation navigation-next " aria-label="Next page: Chapter2">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -294,7 +313,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"RabbitMQ","level":"1.2","depth":1,"next":{"title":"简介","level":"1.2.1","depth":2,"path":"chapter1/section1.1.md","ref":"chapter1/section1.1.md","articles":[]},"previous":{"title":"学习笔记","level":"1.1","depth":1,"path":"README.md","ref":"README.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"chapter1/README.md","mtime":"2020-08-04T01:59:46.208Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-08-04T09:54:37.236Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"RabbitMQ的多种Exchange类型","level":"1.2.3","depth":2,"next":{"title":"Chapter2","level":"1.3","depth":1,"path":"chapter2/README.md","ref":"chapter2/README.md","articles":[]},"previous":{"title":"RabbitMQ各组件功能","level":"1.2.2","depth":2,"path":"chapter1/section1.2.md","ref":"chapter1/section1.2.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"chapter1/section1.3.md","mtime":"2020-08-04T09:51:11.969Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-08-04T09:55:44.127Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
